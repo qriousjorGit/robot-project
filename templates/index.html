@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decommissioned Robots</title>
+</head>
+<body>
+
+<h2>Why?</h2>
+<p style="width: 50%">This project was born from a desire to add more transparency to what’s actually happening with our
+  teams and teammates at DataRobot. After March of this year (2022), many robots across the globe wanted more information
+  about who had left the company and when.  All of this information is publicly available, but to my knowledge, it has not
+  been compiled in one place - until now.
+</p>
+
+<h2>What?</h2>
+<p style="width: 50%">All the information you see is pulled from a database that will be updated monthly.  It shows our
+  colleagues who have left the company each month starting from January of 2022.  To be clear, it does not distinguish
+  between robots who left the company voluntarily and those that were let go or dismissed.  It only shows when they
+  stopped being our colleagues.
+</p>
+
+
+<h4>List of Decommissioned Robots 2022</h4>
+
+<a href="{{ url_for('show_month', month=1) }}">January - {{jan_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=2) }}">February - {{feb_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=3) }}">March - {{march_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=4) }}">April - {{april_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=5) }}">May - {{may_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=6) }}">June - {{june_list|length}}</a>
+<br>
+<a href="{{ url_for('show_month', month=7) }}">July - {{july_list|length}}</a>
+<br>
+<br>
+<a href="{{ url_for('show_all') }}">Show All</a>
+
+<h2>How?</h2>
+<p style="width: 50%">If you would like more information about the project, or perhaps even collaborate on it, please feel free to
+  <a href="{{ url_for('contact') }}">Contact Me!!</a>
+</p>
+
+
+</body>
+</html>

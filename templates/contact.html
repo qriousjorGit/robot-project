@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+<body>
+
+    <img src="{{url_for('static', filename='images/sphinx.png')}}" alt="Sphinx" style="width: 10%">
+    <p> <em>Welcome Adventurer!  I applaud your desire for more knowledge.  To continue on your quest, you must answer me these questions three!!!</em>
+    </p>
+
+    <form action="{{ url_for('contact') }}" method="post">
+        <label> Who is this man? </label>
+        <br>
+        <img src="{{url_for('static', filename='images/ts.png')}}" alt="???" style="width: 10%">
+        <br>
+        <input type="text" name="answer1">
+        <br>
+        <br>
+        <label> What is this? </label>
+        <br>
+        <img src="{{url_for('static', filename='images/var.png')}}" alt="???" style="width: 10%">
+        <br>
+        <input type="text" name="answer2">
+        <br>
+        <br>
+        <label> Question 3: coming soon </label>
+        <br>
+        <input type="text" name="answer3">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
