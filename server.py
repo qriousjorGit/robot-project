@@ -74,15 +74,21 @@ for bot in all_bots:
 
 print(f"June list {len(junebots)}")
 
+julybots = []
+for bot in all_bots:
+    if bot.robot_deactivated.startswith('07'):
+        julybots.append(bot)
+
+print(f"July list {len(julybots)}")
 
 @app.route('/')
 def home():
-    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots)
+    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots)
     #TODO: There's probably a better way to render the template with "length" than passing a list for every month
 
 @app.route('/all')
 def show_all():
-    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots)
+    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots)
 
 
 @app.route('/<month>')
@@ -100,8 +106,8 @@ def show_month(month):
         return render_template('month.html', bot_list=maybots)
     elif month == '6':
         return render_template('month.html', bot_list=junebots)
-    # elif month == '7':
-    #     return render_template('month.html', bot_list=junebots)
+    elif month == '7':
+        return render_template('month.html', bot_list=julybots)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
