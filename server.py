@@ -81,6 +81,13 @@ for bot in all_bots:
 
 print(f"July list {len(julybots)}")
 
+augustbots = []
+for bot in all_bots:
+    if bot.robot_deactivated.startswith('08'):
+        augustbots.append(bot)
+
+print(f"August list {len(augustbots)}")
+
 @app.route('/')
 def home():
     return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots)
@@ -108,6 +115,8 @@ def show_month(month):
         return render_template('month.html', bot_list=junebots)
     elif month == '7':
         return render_template('month.html', bot_list=julybots)
+    elif month == '8':
+        return render_template('month.html', bot_list=augustbots)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
