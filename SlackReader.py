@@ -69,7 +69,7 @@ try:
     # https://api.slack.com/docs/pagination
     next_cursor = users.get("response_metadata").get("next_cursor")
 
-    while len(user_list) < 5000:
+    while len(user_list) < 8000:
         users = client.users_list(limit=500, cursor=next_cursor)
         # print(next_cursor)
         for item in users.get("members"):
