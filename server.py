@@ -90,7 +90,7 @@ print(f"August list {len(augustbots)}")
 
 septemberbots = []
 for bot in all_bots:
-    if bot.robot_deactivated.startswith('08'):
+    if bot.robot_deactivated.startswith('09'):
         septemberbots.append(bot)
 
 
