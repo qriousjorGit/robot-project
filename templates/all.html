@@ -232,6 +232,42 @@
             {% endfor %}
         </ul>
 
+    <h1>SEPTEMBER - Total decommissioned {{sept_list|length}}</h1>
+        <ul>
+            {% for bot in sept_list %}
+                <li class="image">
+                    <div style="width: 14em;">
+                            <img src="{{bot.robot_photo}}" alt="image not found">
+                            <p style="width: 10em">{{bot.robot_name}}</p>
+                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                            {% if bot.robot_title == ""  %}
+                                <p>No title</p>
+                            {% else %}
+                                <p style="width: 99%">{{bot.robot_title}}</p>
+                            {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+    <h1>OCTOBER - Total decommissioned {{oct_list|length}}</h1>
+        <ul>
+            {% for bot in oct_list %}
+                <li class="image">
+                    <div style="width: 14em;">
+                            <img src="{{bot.robot_photo}}" alt="image not found">
+                            <p style="width: 10em">{{bot.robot_name}}</p>
+                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                            {% if bot.robot_title == ""  %}
+                                <p>No title</p>
+                            {% else %}
+                                <p style="width: 99%">{{bot.robot_title}}</p>
+                            {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
 </body>
 </html>
 >>>>>>> f73af37 (Initial Commit)
