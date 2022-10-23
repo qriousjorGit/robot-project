@@ -132,6 +132,8 @@ def show_month(month):
         return render_template('month.html', bot_list=augustbots)
     elif month == '9':
         return render_template('month.html', bot_list=septemberbots)
+    elif month == '10':
+        return render_template('month.html', bot_list=octoberbots)
    
 
 
