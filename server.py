@@ -103,12 +103,12 @@ print(f"October list {len(octoberbots)}")
 
 @app.route('/')
 def home():
-    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots)
+    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots,  oct_list=octoberbots)
     #TODO: There's probably a better way to render the template with "length" than passing a list for every month
 
 @app.route('/all')
 def show_all():
-    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots)
+    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots,  oct_list=octoberbots)
 
 
 @app.route('/<month>')
