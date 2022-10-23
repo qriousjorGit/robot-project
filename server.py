@@ -92,6 +92,13 @@ septemberbots = []
 for bot in all_bots:
     if bot.robot_deactivated.startswith('09'):
         septemberbots.append(bot)
+        
+octoberbots = []
+for bot in all_bots:
+    if bot.robot_deactivated.startswith('10'):
+        octoberbots.append(bot)
+
+print(f"October list {len(octoberbots)}")
 
 
 @app.route('/')
