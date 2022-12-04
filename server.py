@@ -102,15 +102,25 @@ for bot in all_bots:
 
 print(f"October list {len(octoberbots)}")
 
+novemberbots = []
+for bot in all_bots:
+    if bot.robot_deactivated.startswith('11'):
+        novemberbots.append(bot)
+
+decemberbots = []
+for bot in all_bots:
+    if bot.robot_deactivated.startswith('12'):
+        decemberbots.append(bot)
+
 
 @app.route('/')
 def home():
-    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots, oct_list=octoberbots)
+    return render_template('index.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots, oct_list=octoberbots, nov_list=novemberbots, dec_list=decemberbots)
     #TODO: There's probably a better way to render the template with "length" than passing a list for every month
 
 @app.route('/all')
 def show_all():
-    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots, oct_list=octoberbots)
+    return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots, oct_list=octoberbots, nov_list=novemberbots, dec_list=decemberbots)
 
 
 @app.route('/<month>')
@@ -136,6 +146,10 @@ def show_month(month):
         return render_template('month.html', bot_list=septemberbots)
     elif month == '10':
         return render_template('month.html', bot_list=octoberbots)
+    elif month == '11':
+        return render_template('month.html', bot_list=novemberbots)
+    elif month == '12':
+        return render_template('month.html', bot_list=decemberbots)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
