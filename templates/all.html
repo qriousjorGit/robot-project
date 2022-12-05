@@ -44,8 +44,7 @@
         {% endfor %}
     </ul>
 
-
-        <h1>MARCH - Total decommissioned {{march_list|length}}</h1>
+    <h1>MARCH - Total decommissioned {{march_list|length}}</h1>
     <ul>
         {% for bot in march_list %}
             <li class="image">
@@ -63,7 +62,7 @@
         {% endfor %}
     </ul>
 
-        <h1>APRIL - Total decommissioned {{april_list|length}}</h1>
+    <h1>APRIL - Total decommissioned {{april_list|length}}</h1>
     <ul>
         {% for bot in april_list %}
             <li class="image">
@@ -81,7 +80,7 @@
         {% endfor %}
     </ul>
 
-            <h1>MAY - Total decommissioned {{may_list|length}}</h1>
+    <h1>MAY - Total decommissioned {{may_list|length}}</h1>
     <ul>
         {% for bot in may_list %}
             <li class="image">
@@ -116,8 +115,7 @@
             </li>
         {% endfor %}
     </ul>
-<<<<<<< HEAD
-    
+
      <h1>JULY - Total decommissioned {{july_list|length}}</h1>
         <ul>
             {% for bot in july_list %}
@@ -190,84 +188,6 @@
             {% endfor %}
         </ul>
 
-    
-    
-</body>
-</html>
-=======
-
-    <h1>JULY - Total decommissioned {{july_list|length}}</h1>
-        <ul>
-            {% for bot in july_list %}
-                <li class="image">
-                    <div style="width: 14em;">
-                            <img src="{{bot.robot_photo}}" alt="image not found">
-                            <p style="width: 10em">{{bot.robot_name}}</p>
-                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
-                            {% if bot.robot_title == ""  %}
-                                <p>No title</p>
-                            {% else %}
-                                <p style="width: 99%">{{bot.robot_title}}</p>
-                            {% endif %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-
-    <h1>AUGUST - Total decommissioned {{august_list|length}}</h1>
-        <ul>
-            {% for bot in august_list %}
-                <li class="image">
-                    <div style="width: 14em;">
-                            <img src="{{bot.robot_photo}}" alt="image not found">
-                            <p style="width: 10em">{{bot.robot_name}}</p>
-                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
-                            {% if bot.robot_title == ""  %}
-                                <p>No title</p>
-                            {% else %}
-                                <p style="width: 99%">{{bot.robot_title}}</p>
-                            {% endif %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-
-    <h1>SEPTEMBER - Total decommissioned {{sept_list|length}}</h1>
-        <ul>
-            {% for bot in sept_list %}
-                <li class="image">
-                    <div style="width: 14em;">
-                            <img src="{{bot.robot_photo}}" alt="image not found">
-                            <p style="width: 10em">{{bot.robot_name}}</p>
-                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
-                            {% if bot.robot_title == ""  %}
-                                <p>No title</p>
-                            {% else %}
-                                <p style="width: 99%">{{bot.robot_title}}</p>
-                            {% endif %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-
-    <h1>OCTOBER - Total decommissioned {{oct_list|length}}</h1>
-        <ul>
-            {% for bot in oct_list %}
-                <li class="image">
-                    <div style="width: 14em;">
-                            <img src="{{bot.robot_photo}}" alt="image not found">
-                            <p style="width: 10em">{{bot.robot_name}}</p>
-                            <p style="width: 75%">{{bot.robot_deactivated}}</p>
-                            {% if bot.robot_title == ""  %}
-                                <p>No title</p>
-                            {% else %}
-                                <p style="width: 99%">{{bot.robot_title}}</p>
-                            {% endif %}
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-
     <h1>NOVEMBER - Total decommissioned {{nov_list|length}}</h1>
         <ul>
             {% for bot in nov_list %}
@@ -306,4 +226,3 @@
 
 </body>
 </html>
->>>>>>> f73af37 (Initial Commit)
