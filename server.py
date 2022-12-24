@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///robotbase2.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rb3.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -14,6 +14,7 @@ class Robot(db.Model):
     robot_deactivated = db.Column(db.String(100), unique=False, nullable=True)
     robot_photo = db.Column(db.String(100), unique=False, nullable=True)
     robot_title = db.Column(db.String(100), unique=False, nullable=True)
+    robot_link = db.Column(db.String(100), unique=False, nullable=True)
 
     def __repr__(self):
         return '<Botlist %r>' % self.robot_name
@@ -30,7 +31,7 @@ print(len(all_bots))
 janbots = []
 for bot in all_bots:
     if bot.robot_deactivated.startswith('01'):
-        # print(bot.robot_name, bot.robot_deactivated, bot.robot_photo)
+        # print(bot.robot_name, bot.robot_deactivated, bot.robot_photo, bot.robot_link)
         janbots.append(bot)
 
 print(f"January - {len(janbots)}")
