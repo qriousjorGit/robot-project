@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decommissioned Robots 2023</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <h1>2023 - Total decommissioned {{full_list|length}}</h1>
+    <ul>
+        {% for bot in full_list %}
+            <li class="image">
+                <div style="width: 14em;">
+                        <img src="{{bot.robot_photo}}" alt="image not found">
+                        <p style="width: 10em">{{bot.robot_name}}</p>
+                        <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                        {% if bot.robot_title == ""  %}
+                            <p>No title</p>
+                        {% else %}
+                            <p style="width: 99%">{{bot.robot_title}}</p>
+                        {% endif %}
+                        <p style="width: 75%"><a href="{{bot.robot_link}}">LinkedIn Profile</a></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

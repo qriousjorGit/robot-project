@@ -4,6 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rb3.db'
+app.config['SQLALCHEMY_BINDS'] = {
+    'db2': 'sqlite:///rb_2023.db'
+}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -19,12 +22,28 @@ class Robot(db.Model):
     def __repr__(self):
         return '<Botlist %r>' % self.robot_name
 
+class Db2(db.Model):
+    __bind_key__ = "db2"
+    id = db.Column(db.Integer, primary_key=True)
+    robot_id = db.Column(db.String(100), unique=False, nullable=True)
+    robot_name = db.Column(db.String(100), unique=False, nullable=True)
+    robot_deactivated = db.Column(db.String(100), unique=False, nullable=True)
+    robot_photo = db.Column(db.String(100), unique=False, nullable=True)
+    robot_title = db.Column(db.String(100), unique=False, nullable=True)
+    robot_link = db.Column(db.String(100), unique=False, nullable=True)
+
+    def __repr__(self):
+        return '<Botlist %r>' % self.robot_name
+
 all_bots = db.session.query(Robot).all()
+all_2023 = db.session.query(Db2).order_by(Db2.robot_deactivated).all()
 
 # bot_to_update = Robot.query.filter_by(robot_deactivated = '01-14-2022').all()
 # print(bot_to_update)
 
 print(len(all_bots))
+print(f"In 2023 so far - {len(all_2023)}")
+
 # print(type(all_bots))
 # print(all_bots[0].robot_photo)
 
@@ -123,6 +142,9 @@ def home():
 def show_all():
     return render_template('all.html', jan_list=janbots, feb_list=febbots, march_list=marchbots, april_list=aprilbots, may_list=maybots, june_list=junebots, july_list=julybots, august_list=augustbots, sept_list=septemberbots, oct_list=octoberbots, nov_list=novemberbots, dec_list=decemberbots)
 
+@app.route('/2023')
+def show_all_2023():
+    return render_template('all2023.html', full_list=all_2023)
 
 @app.route('/<month>')
 def show_month(month):
