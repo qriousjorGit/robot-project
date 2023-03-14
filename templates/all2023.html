@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Decommissioned Robots 2023</title>
@@ -8,9 +8,17 @@
 
 <body>
 
-    <h1>2023 - Total decommissioned {{full_list|length}}</h1>
+<h1>Total Decommissioned 2023 - {{full_list|length}}</h1>
+<a href="">January - {{jan_list|length}}</a>
+<br>
+<a href="#Febjump">February - {{feb_list|length}}</a>
+<br>
+<a href="#Marchjump">March - {{march_list|length}}</a>
+
+
+<h1><center>January - Total Decommissioned - {{jan_list|length}}</center></h1>
     <ul>
-        {% for bot in full_list %}
+        {% for bot in jan_list %}
             <li class="image">
                 <div style="width: 14em;">
                         <img src="{{bot.robot_photo}}" alt="image not found">
@@ -26,6 +34,49 @@
             </li>
         {% endfor %}
     </ul>
+    <br>
+
+<a id="Febjump"></a>
+        <h1><center>February - Total Decommissioned - {{feb_list|length}}</center></h1>
+    <ul>
+        {% for bot in feb_list %}
+            <li class="image">
+                <div style="width: 14em;">
+                        <img src="{{bot.robot_photo}}" alt="image not found">
+                        <p style="width: 10em">{{bot.robot_name}}</p>
+                        <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                        {% if bot.robot_title == ""  %}
+                            <p>No title</p>
+                        {% else %}
+                            <p style="width: 99%">{{bot.robot_title}}</p>
+                        {% endif %}
+                        <p style="width: 75%"><a href="{{bot.robot_link}}">LinkedIn Profile</a></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+
+<a id="Marchjump"> </a>
+<h1><center>March - Total Decommissioned - {{march_list|length}}</center></h1>
+    <ul>
+        {% for bot in march_list %}
+            <li class="image">
+                <div style="width: 14em;">
+                        <img src="{{bot.robot_photo}}" alt="image not found">
+                        <p style="width: 10em">{{bot.robot_name}}</p>
+                        <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                        {% if bot.robot_title == ""  %}
+                            <p>No title</p>
+                        {% else %}
+                            <p style="width: 99%">{{bot.robot_title}}</p>
+                        {% endif %}
+                        <p style="width: 75%"><a href="{{bot.robot_link}}">LinkedIn Profile</a></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
 
 </body>
 </html>

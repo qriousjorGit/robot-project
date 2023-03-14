@@ -38,6 +38,10 @@ class Db2(db.Model):
 all_bots = db.session.query(Robot).all()
 all_2023 = db.session.query(Db2).order_by(Db2.robot_deactivated).all()
 
+jan2023 = [x for x in all_2023 if x.robot_deactivated.startswith('01')]
+feb2023 = [x for x in all_2023 if x.robot_deactivated.startswith('02')]
+march2023 = [x for x in all_2023 if x.robot_deactivated.startswith('03')]
+
 # bot_to_update = Robot.query.filter_by(robot_deactivated = '01-14-2022').all()
 # print(bot_to_update)
 
@@ -144,7 +148,7 @@ def show_all():
 
 @app.route('/2023')
 def show_all_2023():
-    return render_template('all2023.html', full_list=all_2023)
+    return render_template('all2023.html', full_list=all_2023, jan_list=jan2023, feb_list=feb2023, march_list=march2023)
 
 @app.route('/<month>')
 def show_month(month):
