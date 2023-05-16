@@ -14,6 +14,10 @@
 <a href="#Febjump">February - {{feb_list|length}}</a>
 <br>
 <a href="#Marchjump">March - {{march_list|length}}</a>
+<br>
+<a href="#Apriljump">April - {{april_list|length}}</a>
+<br>
+<a href="#Mayjump">May - {{may_list|length}}</a>
 
 
 <h1><center>January - Total Decommissioned - {{jan_list|length}}</center></h1>
@@ -78,9 +82,31 @@
     </ul>
     <br>
 
+<a id="Apriljump"> </a>
 <h1><center>April - Total Decommissioned - {{april_list|length}}</center></h1>
     <ul>
         {% for bot in april_list %}
+            <li class="image">
+                <div style="width: 14em;">
+                        <img src="{{bot.robot_photo}}" alt="image not found">
+                        <p style="width: 10em">{{bot.robot_name}}</p>
+                        <p style="width: 75%">{{bot.robot_deactivated}}</p>
+                        {% if bot.robot_title == ""  %}
+                            <p>No title</p>
+                        {% else %}
+                            <p style="width: 99%">{{bot.robot_title}}</p>
+                        {% endif %}
+                        <p style="width: 75%"><a href="{{bot.robot_link}}">LinkedIn Profile</a></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+
+<a id="Mayjump"> </a>
+<h1><center>May - Total Decommissioned - {{may_list|length}}</center></h1>
+    <ul>
+        {% for bot in may_list %}
             <li class="image">
                 <div style="width: 14em;">
                         <img src="{{bot.robot_photo}}" alt="image not found">
